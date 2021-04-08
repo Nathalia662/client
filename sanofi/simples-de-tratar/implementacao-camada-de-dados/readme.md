@@ -6,7 +6,7 @@
 <br />
 
 ## Implementação da Camada de dados - Puran - Simples de tratar
-Última atualização: 03/03/2020 <br />
+Última atualização: 08/04/2021 <br />
 Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 
 <br />
