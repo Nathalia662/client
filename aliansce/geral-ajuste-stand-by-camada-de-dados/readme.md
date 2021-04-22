@@ -5,7 +5,7 @@
 
 <br />
 
-## Implementação da Camada de dados - Geral
+## Ajustes/implementações da Camada de dados - Geral
 Última atualização: 22/04/2021 <br />
 Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 
@@ -118,4 +118,4 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 <br />
 
-<script> document.querySelector('h1').style.display = 'none' </script>
+
