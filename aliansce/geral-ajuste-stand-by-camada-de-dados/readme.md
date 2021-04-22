@@ -143,7 +143,7 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente.  |
 | [[item-menu]]  | 'ver-horario'| Deve retornar o nome do menu clicado. |
-| [[item-submenu]]  | 'ver-mais-horarios'| Deve retornar o nome do botao clicado no submenu. |
+| [[item-submenu]]  | 'ver-mais-horarios'.| Deve retornar o nome do botao clicado no submenu. |
 
 
 
