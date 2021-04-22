@@ -17,6 +17,9 @@ Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Geral](#geral)
 - [Home](#home)
+- [Shopping](#shopping)
+- [Area logada](#area-logada)
+- [Vitrine de produtos](#Vitrine-de-produtos)
 
 ## Objetivo
 Este documento tem como objetivo instruir a implementação da camada de dados para utilização de recursos de monitoramento do Google Analytics referentes aos ambientes:
@@ -92,7 +95,7 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 ### Geral
 
-**Quando: Ao clicar no modal.(implementar)**<br />
+**Quando: Ao clicar no modal (implementar)**<br />
 
 - **Onde:**  Em todas as páginas que estiver disponível.
     
@@ -194,6 +197,169 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 <br />
 
 ---
+
+### Shopping
+
+**Quando: No clique dos link de telefone e e-mail (implementar)**<br />
+
+- **Onde:**  Na página comercialização.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:comercializacao',
+    'eventAction': 'clique:link',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
+
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]]  | 'tel:(11)5512-5200'e 'e-mail:@aliansce.com.br'| Deve retonar o nome do link clicado. |
+
+
+<br />
+
+---
+
+### Area logada
+
+**Quando: Na interação com os checkbox do formulário dados de cadastro (Ajustar categoria)**<br />
+
+- **Onde:**  Na página "Editar Perfil" na área logada do site.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:area-logada:editar-perfil',
+    'eventAction': 'interacao:checkbox:formulario-dados-de-cadastro',
+    'eventLabel': '[[acao]]:[[nome-checkbox]]'
+  });
+</script>
+
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente. |
+| [[acao]]  | 'check', 'uncheck'. | Deve retornar a ação do usuário.|
+| [[nome-checkbox]]   | 'por-telefone'', 'por-email' e etc| Deve retornar o nome do checkbox. |
+
+
+<br />
+
+---
+
+### Vitrine de produtos
+
+**Quando: Na interação com o campo de filtro (implementar)**<br />
+
+- **Onde:**   Na página Vitrine de produtos.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:vitrine-produtos',
+    'eventAction':'interacao:filtro',
+    'eventLabel': '[[tipo-filtro]]:[[nome-item]]'
+  });
+</script>
+
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente. |
+| [[nome-item]]   |  'artigos-diversos', 'conveniencia-servicos', 'alimentacao' e etc. | Deve retornar o nome do item escolhido no filtro|
+| [[tipo-filtro]]   | 'categoria', 'lojar' ou 'canais'.| Deve retornar o tipo do filtro onde o usuário está interagindo.|
+
+
+<br />
+
+**Quando: No clique em alguma loja (implementar)**<br />
+
+- **Onde:**   Na página Vitrine de produtos.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:vitrine-produtos',
+    'eventAction':'clique:loja',
+    'eventLabel': '[[nome-loja]]'
+  });
+</script>
+
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente. |
+| [[nome-loja]]  |'a-especialista', 'academia-bodytech' e etc| Deve retornar o nome da loja clicada|
+
+<br />
+
+**Quando: No clique dos botões de alguma loja (implementar)**<br />
+
+- **Onde:**   Na página Vitrine de produtos.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:vitrine-produtos',
+    'eventAction':'clique:botao:loja',
+    'eventLabel': '[[nome-loja]]:[[nome-botao]]'
+  });
+</script>
+
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente. |
+| [[nome-loja]]  |'a-especialista', 'academia-bodytech' e etc| Deve retornar o nome da loja clicada|
+| [[nome-botao]]   |'whatsapp', 'site-da-loja', 'drive-thru' e etc| Deve retornar o nome do botão clicado.|
+
+<br />
+
+**Quando: No clique dos botões de alguma loja (implementar)**<br />
+
+- **Onde:**   Na página Vitrine de produtos.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:vitrine-produtos',
+    'eventAction':'clique:link',
+    'eventLabel': 'ver-mais'
+  });
+</script>
+
+```
+
+<br />
+
+
+
 
 > Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 
