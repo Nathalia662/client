@@ -15,7 +15,7 @@ Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 
 - [Objetivo](#objetivo)
 - [Implementação](#implementa%c3%a7%c3%a3o)
-- [STAND BY](#STAND-BY)
+- [Geral](#geral)
 
 ## Objetivo
 Este documento tem como objetivo instruir a implementação da camada de dados para utilização de recursos de monitoramento do Google Analytics referentes aos ambientes:
@@ -85,57 +85,11 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 	});
 </script>
 ```
-
-### Especificações Globais:
-
-**Itens Gerais:**<br />
-Todas as informações entre colchetes `[[  ]]` são variáveis dinâmicas que devem ser preenchidas com seus respectivos valores; <br />
-Todos os valores enviados ao Google Analytics devem estar sanitizados, ou seja, sem espaços, acentuação ou caracteres especiais; <br />
-Caso a informação solicitada não estiver disponível retornar tipagem ´undefined´.
-
-
-
-### Dimensões Globais:
-
-**Dimensões Customizadas para todas as páginas:**<br />
-Deve ser disparado um push de dataLayer no momento de carregamento de todas as páginas do site (Considerar também todas as trocas de Path, quando o conteúdo da página é alterado mas a página não recarrega).<br />
-
-
-```html
-<script>
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-	  'dimension1': '[[User ID]]',
-	  'dimension2': '[[GA ClientID]]',
-	  'dimension3': '[[GTM-ID]]',
-	  'dimension4': '[[Nome Ambiente]]',
-          'dimension5': '[[Nome Loja]]',
-          'dimension6': '[[Localização]]',
-          'dimension7': '[[Device ID]]',
-          'dimension8': '[[[cpf]]',
-          'dimension9': '[[email]]'
-
-	
-	});
-</script>
-```
-
-
-| Variável 				| Exemplo 				| Descrição 									|
-| :--------------------	| :-------------------- | :-------------------------------------------	|
-| [[User ID]]			| '1234656'			    | ID definido após o cadastro e login										|
-| [[GA ClientID]]	| 'XXXXXXXXXX:XXXX:XX'	| ID aleatório do Google Analytics										|
-| [[GTM-ID]]			| 'GTM-P8ZFN2S'		| ID do container do GTM instalado no ambiente										|
-| [[Nome Ambiente]] | parque-d-pedro', 'shopping-taboao' e etc | Deve retornar o nome do shopping visitado.  |
-| [[Nome Loja]] | 'concept', 'marisa' e etc | Deve retornar o nome da loja  |
-| [[Localização]] | 'capao-redondo', 'morumbi', 'santa-cruz' e etc. | Deve retornar a localização  |
-| [[Device ID]]   | 'XXXXXXX' | Deve retornar o ID do dispositivo utilizado   |
-| [[cpf]]   | 'jsdjs46454sds5dsd' | Deve retornar o cpf hasheado do usuário, em todas as páginas apos ele logar ou se cadastrar   |
-| [[email]]   | 'jsdkjskdj' | Deve retornar o email hasheado do usuário, em todas as páginas apos ele logar ou se cadastrar    |
-
 ---
 
-### STAND BY
+<H3 align="center"> STAND BY </h3>
+
+### geral
 
 **Quando: No clique dos botões**<br />
 
