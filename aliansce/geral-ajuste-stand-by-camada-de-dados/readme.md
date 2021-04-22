@@ -92,7 +92,7 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 ### Geral
 
-**Quando: Ao clicar no modal.**<br />
+**Quando: Ao clicar no modal.(implementar)**<br />
 
 - **Onde:**  Em todas as páginas que estiver disponível.
     
@@ -118,7 +118,7 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 <br />
 
-**Quando:  No clique do botão "ver mais horários" no submenu do horário de funcionamento no header**<br />
+**Quando:  No clique do botão "ver mais horários" no submenu do horário de funcionamento no header(implementar)**<br />
 
 - **Onde:**  Em todas as páginas que estiver disponível.
     
@@ -144,11 +144,37 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 <br />
 
+**Quando:  No clique dos botões ou links de cada seção (ajustar categoria)**<br />
+
+- **Onde:**  Na página home.
+    
+```html
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'genericEvent',
+    'eventCategory': '[[nome-ambiente]]:geral',
+    'eventAction': 'clique:[[botao-ou-link]]',
+    'eventLabel': '[[secao]]:[[nome-item]]'
+  });
+</script>
+
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente.  |
+| [[botao-ou-link]] | Deve retornar o tipo de elemento clicado. | 'botao' ou 'link' |
+| [[secao]] | 'acontece', 'lojas', 'cinema' e etc| Deve retornar o nome da seção.   |
+| [[nome-item]]  | Deve retornar o nome do item clicado. | 'leia-mais', 'agenda', 'buscar', 'todos-os-filmes' e etc|
+
+<br />
+
 ---
 
 ### Home
 
-**Quando:  No clique do botão "saiba mais" do banner**<br />
+**Quando:  No clique do botão "saiba mais" do banner(implementar)**<br />
 
 - **Onde:**  Na página home.
     
@@ -168,33 +194,6 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 <br />
 
 ---
-
-
-**Quando:  No clique dos botões ou links de cada seção (ajustar categoria)**<br />
-
-- **Onde:**  Na página home.
-    
-```html
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'genericEvent',
-    'eventCategory': '[[nome-ambiente]]:home',
-    'eventAction': 'clique:[[botao-ou-link]]',
-    'eventLabel': '[[secao]]:[[nome-item]]'
-  });
-</script>
-
-```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente.  |
-| [[botao-ou-link]] | Deve retornar o tipo de elemento clicado. | 'botao' ou 'link' |
-| [[secao]] | 'acontece', 'lojas', 'cinema' e etc| Deve retornar o nome da seção.   |
-| [[nome-item]]  | Deve retornar o nome do item clicado. | 'leia-mais', 'agenda', 'buscar', 'todos-os-filmes' e etc|
-
-<br />
 
 > Em caso de dúvidas, entrar em contato com: [tag@reamp.com.br](tag@reamp.com.br)
 
