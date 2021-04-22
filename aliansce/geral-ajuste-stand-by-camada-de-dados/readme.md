@@ -142,7 +142,9 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-ambiente]]  | 'shopping-leblon', 'parque-d-pedro', 'shopping-taboao'| Deve retornar o nome do ambiente.  |
-| [[nome-item]]  | 'renault-kmd', '10%-desconto-frete-gratis' e etc| Deve retornar o titulo do modal. |
+| [[item-menu]]  | 'ver-horario'| Deve retornar o nome do menu clicado. |
+| [[item-submenu]]  | 'ver-mais-horarios'| Deve retornar o nome do botao clicado no submenu. |
+
 
 
 <br />
