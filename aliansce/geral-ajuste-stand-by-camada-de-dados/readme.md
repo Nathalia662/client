@@ -87,9 +87,9 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 ```
 ---
 
-<H3 align="center"> STAND BY </h3>
+<H3 align="center"> AJUSTES/STAND BY </h3>
 
-### geral
+### Geral
 
 **Quando: No clique dos botões**<br />
 
